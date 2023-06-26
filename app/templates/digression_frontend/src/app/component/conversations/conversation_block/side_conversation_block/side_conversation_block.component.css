@@ -1,0 +1,33 @@
+.expanded .editable-text{
+  height: 10em;
+  background-color: darkgray;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+.unexpanded .editable-text{
+  height: 5em;
+  background-color: lightgray;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+.mat-card {
+  display: flex;
+  align-items: top;
+}
+
+.editable-text {
+  width: 100%; /* Make the div fill the available width */
+  height: 100%; /* Make the div fill the entire container */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  overflow: auto; /* Enable scrollbars if the content exceeds the container size */
+  padding: 8px; /* Add some padding to the div */
+}
+
+
+
+.delete-button{
+  display: flex;
+  margin-top : 5px;
+}

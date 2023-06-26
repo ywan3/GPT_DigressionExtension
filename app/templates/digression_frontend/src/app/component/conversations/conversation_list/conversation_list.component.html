@@ -1,0 +1,39 @@
+<div class="content-wrapper">
+  <div class="grid-container">
+    <div [ngClass] = "{'isSingleColumn': '!hasConversationBranch', 'isNotSingleColumn' : 'hasConversationBranch'}">
+      <div class="column1" *ngFor="let index of leftColumnRange">
+        <div class="conversation-block-container">
+          <main-conversation-block
+            [item]="dummyConversationList[index]"
+            [activeConversationId]="activeConversationId"
+            (idSelected)="handleEventSelect($event)">
+          </main-conversation-block>
+          <add-conversation-button 
+          [conversationId] = "index" 
+          (conversationIdEmitter) = "handleConversationRendering($event)"
+          (isSingleColumnEmitter) = "onAddSideConversation($event)"
+          (componentCoordinateEventEmitter) = "drawLineBetweenMainAndSideConversation($event)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <svg width="100%" height="100%">
+      <path [attr.d]="'M ' + startX + ' ' + startY + ' Q ' + ((startX + endX) / 2) + ' ' + ((startY + endY) / 2) + ', ' + endX + ' ' + endY" fill="black" stroke="black"></path>
+    </svg>    
+
+    <div [@fadeInOut] *ngIf="this.hasConversationBranch">
+      <div class="column2" *ngFor="let index of leftColumnRange">
+          <div class="conversation-block-container" [@fadeInOutFast] *ngIf = "checkIfConversationIsAdded(index)">
+            <side-conversation-block
+              [item]="getConversationDetail(index)"
+              [activeConversationId]="activeConversationId"
+              (idSelected)="handleEventSelect($event)"
+              (deleteConversationEventEmitter) = "deleteCurrentConversationHandler($event)"
+              (componentCoordinateEventEmitter) = "drawLineBetweenMainAndSideConversation($event)"
+            ></side-conversation-block>
+          </div>
+      </div>      
+    </div>
+  </div>
+</div>

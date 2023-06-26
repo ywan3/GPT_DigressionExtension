@@ -1,0 +1,40 @@
+.input-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+  }
+
+
+  .custom-input {
+    width: 90%;
+  }
+  
+  .input-container textarea.mat-input-element {
+    overflow: hidden; /* Hide any overflow content */
+    resize: none; /* Disable manual resizing */
+  }
+  
+  .textarea-wrapper {
+    position: relative; /* Set the wrapper as the positioning context */
+  }
+  
+  .textarea-wrapper textarea.mat-input-element {
+    height: auto; /* Allow the textarea to adjust its height */
+    min-height: 56px; /* Set a minimum height for the initial size */
+    padding-bottom: 8px; /* Add some padding to the bottom */
+  }
+  
+  .button-container {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .button-container button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  
