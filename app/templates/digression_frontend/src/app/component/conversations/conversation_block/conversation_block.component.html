@@ -1,0 +1,10 @@
+<div 
+  (mouseenter)="startHover()" 
+  (mouseleave)="endHover()"
+  (click)="onClick()"
+  [ngClass]="{ 'expanded': isExpanded, 'unexpanded': !isExpanded }">
+  <mat-card [ngClass]="{ 'selected': item.selected, 'light-grey-card': true, 'unexpanded': !isExpanded }">
+    <div class="editable-text" [attr.contenteditable]="isExpanded ? 'true' : 'false'" [style.max-height]="getTextareaMaxHeight()">{{ item.content }}</div>
+  </mat-card>
+  <delete-conversation-button *ngIf= "isExpanded" class="delete-button"/>
+</div>

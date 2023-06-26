@@ -1,0 +1,18 @@
+<div class="container">
+  <mat-toolbar class="custom-toolbar">
+    <button mat-icon-button class = "custom-dropdown">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="navbar-title">GPT MindMap</span>
+  </mat-toolbar>
+
+<conversation-list [activeConversationId] = "activeConversationId" (isSingleColumn) = "isSingleColumnHandler($event)"/>
+</div>
+<div class="composite-search-bar">
+  <div class="search-bar">
+    <search-bar [isSingleColumn]="getIsSingleColumn()"></search-bar>
+  </div>
+  <div class="search-bar" *ngIf="!getIsSingleColumn()">
+    <search-bar [isSingleColumn]="getIsSingleColumn()"></search-bar>
+  </div>
+</div>

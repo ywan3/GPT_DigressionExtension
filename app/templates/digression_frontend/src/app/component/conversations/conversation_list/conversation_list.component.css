@@ -1,0 +1,69 @@
+.content-wrapper {
+    flex-grow: 1;
+}
+
+.grid-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+  
+  .column1 {
+    flex: 1;
+    margin-right: 10px;
+    margin-top: 20px;
+    border-radius: 10px; /* Added border-radius property */
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .column2 {
+    flex: 1;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 10px; /* Added border-radius property */
+    padding: 5px;
+    width:100%;
+}
+
+
+.mat-card {
+    background-color: lightgray;
+    border-radius: 10px;
+  }
+  
+  .card-text {
+    text-align: left;
+    padding: 10px;
+  }
+  
+
+  .flex-container {
+    flex: 1;
+    display: flex;
+  }
+  
+
+  .plus-button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right offset as needed */
+    transform: translateY(-50%);
+  }
+
+
+  .conversation-block-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+
+  .column1.isSingleColumn {
+    flex-basis: 100%; /* Populate the whole width if it's a single column */
+  }
+
+  .column1.isNotSingleColumn {
+    flex-basis: 50%;
+  }
